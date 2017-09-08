@@ -46,6 +46,13 @@
         <br>sd
         sdfsdfsdf</pre>
         
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+    40%
+  </div>
+</div>
+        
         <div class="alert alert-success alert-dismissable fade in">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           <strong>Success!</strong> Indicates a successful or positive action.
@@ -76,9 +83,38 @@
 <div class="bg-faded">Cras mattis consectetur purus sit amet fermentum.</div>
       
       
+      <img src="imagens/jaguar.jpg" class="img-rounded img-circle img-responsive">
       
-      
-      
+      <br>
+<br>
+<br>
+<br>
+<br>
+		<input type="button" value="olá" class="btn btn-info btn-md">
+        <div class="btn-group btn-group-justified">
+        	<a href="#" class="btn btn-primary">Teste1</a>
+            <a href="#" class="btn btn-primary">Teste1</a>
+            <a href="#" class="btn btn-primary">Teste1</a>
+        </div>
+        <br>
+<br>
+        <div class="btn-group btn-group-vertical">
+        	<a href="#" class="btn btn-primary">Teste1</a>
+            <a href="#" class="btn btn-primary">Teste1</a>
+            <a href="#" class="btn btn-primary">Teste1</a>
+        </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
       
       
       
