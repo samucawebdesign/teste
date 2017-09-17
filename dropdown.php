@@ -109,7 +109,7 @@
     Aceito receber informativos da 
         <br />
             <br /> 
-              <input class="but_comando" type="submit" name="button2" id="button2" value="Enviar" class="form-control" />
+              <input type="submit" name="button2" id="button2" value="Enviar" class="form-control" />
             <br />
 		  <script type="text/javascript">
           if(document.getElementById('assunto').value == 'Senha de acesso para produtos'){mostra_esconde_div_geral(1,'divCNPJ');}else{mostra_esconde_div_geral(0,'divCNPJ');}
