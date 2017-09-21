@@ -8,20 +8,21 @@ class Usuario
 		
 		private $pdo;
 		
-		public function __construct($i)
+		public function __construct($i = null)
 			{
-				if(!empty($i))
+				try
 					{
-						try
-							{
-								$this->pdo = new PDO("mysql:dbname=test;host=localhost","root",'');
-							}
-						catch(PDOException $e)
-							{
-								echo 'Faça de conexão com o banco de dados: '.$e->getMessage();
-							}
-						
-						$sql = 'select * from usuarios where id= ?';
+						$this->pdo = new PDO("mysql:dbname=test;host=localhost","root",'');
+						$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); # isso aqui só faz mostrar erros na query se houver
+					}
+				catch(PDOException $e)
+					{
+						echo 'Falha de conexão com o banco de dados: '.$e->getMessage();
+					}
+							
+				if(!empty($i))
+					{	
+						$sql = 'select * from usuarios where id=?';
 						$sql = $this->pdo->prepare($sql);
 						$sql->execute(array($i));
 						
@@ -48,7 +49,7 @@ class Usuario
 			}		
 		public function getNome()
 			{
-				$this->nome;
+				return $this->nome;
 			}
 			
 			
@@ -58,7 +59,7 @@ class Usuario
 			}		
 		public function getEmail()
 			{
-				$this->email;
+				return $this->email;
 			}
 			
 			
@@ -72,16 +73,24 @@ class Usuario
 			{
 				if(!empty($this->id))
 					{
-						$sql = "update usuarios set nome='?',senha='?',email='?' where id=? ";
+						$sql = "update usuarios set nome=?,senha=?,email=? where id=? ";
 						$sql = $this->pdo->prepare($sql);
 						$sql->execute(array($this->nome,$this->email,$this->senha,$this->id));
 					}
 				else
 					{
-						$sql = "inset into usuarios (nome,email,senha) values ('?','?','?')";
+						$sql = "insert into usuarios (nome,email,senha) values (?,?,?)";
 						$sql = $this->pdo->prepare($sql);
 						$sql->execute(array($this->nome,$this->email,$this->senha));
+						
 					}
+			}
+			
+		public function delete()
+			{
+				$sql = "delete from usuarios where id=?";
+				$sql = $this->pdo->prepare($sql);
+				$sql->execute(array($this->id));
 			}
 	}
 ?>
