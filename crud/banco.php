@@ -47,6 +47,7 @@ class Banco
 								$dados[] = "'".addslashes($valor)."'";
 							}
 						$sql .= '('.implode(", ",$campos_tabela).') VALUES ('.implode(", ",$dados).')';
+						echo $sql;
 						$this->pdo->query($sql);
 						
 						# OU FUNCIONA TAMBÉM ASSIM:
