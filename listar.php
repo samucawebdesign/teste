@@ -19,7 +19,7 @@ $dsn = "mysql:dbname=$bd;host=$host";
 try
 	{
 		$pdo = new PDO($dsn,$usuario,$passwd);
-		$sql = "select * from tb_territorio where id_ter=89898";
+		$sql = "select * from tb_territorio";
 		$sql = $pdo->query($sql);
 		if($sql->rowCount() > 0)
 			{
