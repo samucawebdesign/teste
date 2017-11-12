@@ -14,4 +14,8 @@ class Cachorro implements Animal
 
 $carhorro = new Cachorro();
 $carhorro->andar();
+if(isset($_GET['action']) and !empty($_GET['action']) and $_GET['action'] == 1)
+	{
+		echo '<br>deu boa!<br>';
+	}
 ?>
